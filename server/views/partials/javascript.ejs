@@ -1,0 +1,22 @@
+<!-- JS Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script>
+	function deleteContent(type, _id) {
+		var url = `http://localhost:3000/${ type }`;
+		$.ajax({
+			type : 'delete',
+			url : url,
+			data : {"deleteId" : _id},
+			success : function (data) {
+				console.log('성공', data);
+				window.location.reload();
+			},
+			error: function(err){
+				console.log('실패', err);
+			}
+		});
+	}
+</script>
+</body>
+</html>
